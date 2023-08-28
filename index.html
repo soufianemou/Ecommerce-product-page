@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/favicon-32x32.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/9d4783e555.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="./dist/output.css">
+    <link rel="stylesheet" href="./src/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css"  rel="stylesheet" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body class="font-manrope">
+
+    <header class="">
+        <div class="w-[80%]  mx-auto ">
+            <nav class="flex items-center justify-between py-4">               
+                <button class="md:hidden" id="menu"><i class="fa-solid fa-bars fa-2x" style="color: #69707d;"></i></button>               
+                <div class="me-auto md:me-0 ps-5 md:ps-0">
+                    <a href=""><img src="./images/logo.png" alt=""></a>
+                </div>
+                <ul class="gap-3 lg:gap-7 md:me-auto ps-14 md:ps-7 hidden md:flex">
+                    <li class="hover:underline  hover:underline-offset-[27px] decoration-[#ff7d1a] decoration-4 font-bold text-[#989eaa] hover:text-[black] transition-all duration-300"><a href="#">Collection</a></li>                              
+                    <li class="hover:underline  hover:underline-offset-[27px] decoration-[#ff7d1a] decoration-4 font-bold text-[#989eaa] hover:text-[black] transition-all duration-300"><a href="#">Men</a></li>                                           
+                    <li class="hover:underline  hover:underline-offset-[27px] decoration-[#ff7d1a] decoration-4 font-bold text-[#989eaa] hover:text-[black] transition-all duration-300"><a href="#">Women</a></li>                            
+                    <li class="hover:underline  hover:underline-offset-[27px] decoration-[#ff7d1a] decoration-4 font-bold text-[#989eaa] hover:text-[black] transition-all duration-300"><a href="#">About</a></li>
+                    <li class="hover:underline  hover:underline-offset-[27px] decoration-[#ff7d1a] decoration-4 font-bold text-[#989eaa] hover:text-[black] transition-all duration-300"><a href="#">Contact</a></li>                                        
+                </ul>
+                <div class="flex items-center gap-8 relative">
+                    <img src="./images/icon-cart.png" class="cursor-pointer" alt="" id="icon-Card">
+                    <span id="iconCard" class="bg-[#ff7d1a] w-5 h-5 ps-2 top-[-1px] left-4 absolute  rounded-full hidden">1</span>
+                    <img src="./images/image-avatar.png" class="rounded-full hover:border-2 border-[#ff7d1a] cursor-pointer" alt="" width="40px">
+                    <div class="p-3 bg-white w-[300px] h-[215px] rounded-md shadow-xl z-[1000] show absolute bottom-[-240px] md:left-[-150px] left-[-210px]" id="card">
+                        <h2 class="my-3 font-bold">Cart</h2>
+                        <hr id="hrCard">
+                        <!-- <div id='empty' class="h-20 flex justify-center items-center">
+                            <h3>Your card is empty</h3>
+                        </div> -->
+                        <!-- <div class="flex gap-3 mt-6">
+                            <img src="./images/image-product-1-thumbnail.jpg" class="rounded-md" alt="" width="60px" height="30px">
+                            <div>
+                                <h3 class="text-[#F2F2F2] font-bold">fall limited edition sneakers</h3>
+                                <h3 class="text-[#F2F2F2]">$125 x <span>3 </span><span class="font-extrabold text-black">$375.00</span></h3>
+                            </div>
+                            <button onclick="remove(this)" ><i class="fa-solid fa-trash fa-2x" style="color: #F2F2F2;"></i></button>
+                        </div>
+                        <button class="bg-[#ff7d1a] text-[#f2f2f2] rounded-md font-bold text-center w-full mt-3 p-2">Checkout</button> -->
+                    </div>
+                </div>
+            </nav>
+            <nav class="h-screen z-50 bg-white  ps-[35px] pt-[20px] w-[250px] sm:w-[400px] fixed top-0 left-[-450px] shadow-lg transition-all duration-700" id="nav2">
+                
+                <div>
+                    <button id="close"><i class="fa-regular fa-circle-xmark fa-2x hover:shadow-lg rounded-full" style="color: #69707d;"></i></button>
+                    <ul class=" flex flex-col gap-9 mt-14">
+                        <li class="hover:underline  hover:underline-offset-[27px] decoration-[#ff7d1a] decoration-4 font-bold text-[#989eaa] hover:text-[black] transition-all duration-300"><a href="#" class="text-xl font-extrabold">Collection</a></li>                              
+                        <li class="hover:underline  hover:underline-offset-[27px] decoration-[#ff7d1a] decoration-4 font-bold text-[#989eaa] hover:text-[black] transition-all duration-300"><a href="#" class="text-xl font-extrabold">Men</a></li>                                           
+                        <li class="hover:underline  hover:underline-offset-[27px] decoration-[#ff7d1a] decoration-4 font-bold text-[#989eaa] hover:text-[black] transition-all duration-300"><a href="#" class="text-xl font-extrabold">Women</a></li>                            
+                        <li class="hover:underline  hover:underline-offset-[27px] decoration-[#ff7d1a] decoration-4 font-bold text-[#989eaa] hover:text-[black] transition-all duration-300"><a href="#" class="text-xl font-extrabold">About</a></li>
+                        <li class="hover:underline  hover:underline-offset-[27px] decoration-[#ff7d1a] decoration-4 font-bold text-[#989eaa] hover:text-[black] transition-all duration-300"><a href="#" class="text-xl font-extrabold">Contact</a></li>                                        
+                    </ul>
+                </div>
+            </nav>
+            <hr class="border-1 hidden md:block">
+        </div>
+    </header>
+
+
+    <section class=" min-h-[calc(100vh-153px)] md:mt-20">
+        <div class="w-[100%] md:w-[80%] mx-auto grid grid-cols-1 md:grid-cols-2">
+            <div class="w-[90%] hidden md:flex flex-col justify-center items-center">
+                <div class="" type="button" data-modal-target="defaultModal" data-modal-toggle="defaultModal">
+                    <img src="./images/image-product-1.jpg" class="rounded-xl"  alt="" id="mainImg">
+                </div>
+                <div class="flex justify-between mt-7 gap-8" id="thubnails">
+                    <div class="cursor-pointer opacity-50"><img src="./images/image-product-1-thumbnail.jpg" class="rounded-lg one border-2 border-[#ff7d1a]" width="100px" height="100px" alt=""></div>
+                    <div class="cursor-pointer"><img src="./images/image-product-2-thumbnail.jpg" class="rounded-lg two" width="100px" height="100px" alt=""></div>
+                    <div class="cursor-pointer"><img src="./images/image-product-3-thumbnail.jpg" class="rounded-lg three" width="100px" height="100px" alt=""></div>
+                    <div class="cursor-pointer"><img src="./images/image-product-4-thumbnail.jpg" class="rounded-lg four" width="100px" height="100px" alt=""></div>
+                </div>
+            </div>
+            <div id="animation-carousel" class="relative w-full md:hidden" data-carousel="static">
+                <!-- Carousel wrapper -->
+                <div class="relative h-[430px] overflow-hidden">
+                     <!-- Item 1 -->
+                    <div class="hidden duration-200 ease-linear" data-carousel-item>
+                        <img src="./images/image-product-1.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="hidden duration-200 ease-linear" data-carousel-item>
+                        <img src="./images/image-product-2.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="hidden duration-200 ease-linear" data-carousel-item="active">
+                        <img src="./images/image-product-3.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                    </div>
+                    <!-- Item 4 -->
+                    <div class="hidden duration-200 ease-linear" data-carousel-item>
+                        <img src="./images/image-product-4.jpg"  class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                    </div>
+                </div>
+                <!-- Slider controls -->
+                <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white   group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                        <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                        </svg>
+                        <span class="sr-only">Previous</span>
+                    </span>
+                </button>
+                <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white   group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                        <svg class="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                        </svg>
+                        <span class="sr-only">Next</span>
+                    </span>
+                </button>
+            </div>
+            <div class="w-[100%] p-5 ms-auto flex flex-col justify-center gap-2 md:gap-6">
+                <h4 class="text-[#ff7d1a] font-bold">SNAEKER COMPANY</h4>
+                <h1 class="text-4xl font-extrabold ">Fall Limited Edition Sneakers</h1>
+                <p class="text-[#b6bcc8] font-bold">These low-profile sneakers are your perfect casual wear companion. Featuring a 
+                durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+                <h2 id="result" class="font-bold text-2xl">$125.00 <span class="text-[#ff7d1a] bg-[#ffb784] px-2 rounded-lg text-sm ms-1 ">50%</span></h2>
+                <h2 id="prResult" class=" line-through text-[#b6bcc8]">$250.00</h2>
+                <div class="flex gap-3 flex-col md:flex-row">
+                    <div class="flex justify-center">
+                        <span class="px-4 py-2 text-[#ff7d1a] font-bold cursor-pointer bg-[#f2f2f2] rounded-l-lg" id="mins">-</span>
+                        <span class="w-full text-center px-3 py-2 bg-[#f2f2f2] font-bold " id="qt">1</span>
+                        <span class="px-4 py-2 text-[#ff7d1a] font-bold cursor-pointer bg-[#f2f2f2] rounded-r-lg" id="add">+</span>
+                    </div>
+                    <button id="addCart" class=" flex items-center justify-center bg-[#ff7d1a] text-[#f2f2f2] font-bold py-2 rounded-lg w-full shadow-lg">
+                        <img src="./images/icon-cart.png" alt="" class="mr-4">
+                        Add to Cart
+                    </button>
+                </div>
+                
+            </div>
+        </div>
+        <!-- Main modal -->
+        <div id="defaultModal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full  overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+            <div class="relative w-full max-w-[500px] max-h-full">
+                <!-- Modal content -->
+                <div class="relative rounded-lg shadow ">
+                    <!-- Modal header -->
+                    <div class="flex items-start justify-between rounded-t ">
+                        <button type="button" class="text-gray-400 bg-transparent   rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center " data-modal-hide="defaultModal">
+                            <img src="./images/icon-close.png" alt="">
+                        </button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="w-[80%] mx-auto">
+                        <div class="">
+                            <img src="./images/image-product-1.jpg" class="rounded-xl"  alt="" id="mainImgTwo">
+                        </div>
+                        <div class="flex justify-between mt-7 gap-8 opacity-50" id="thubnailsTwo">
+                            <div class="cursor-pointer"><img src="./images/image-product-1-thumbnail.jpg" class="rounded-lg one border-2 border-[#ff7d1a]" width="100px" height="100px" alt=""></div>
+                            <div class="cursor-pointer"><img src="./images/image-product-2-thumbnail.jpg" class="rounded-lg two" width="100px" height="100px" alt=""></div>
+                            <div class="cursor-pointer"><img src="./images/image-product-3-thumbnail.jpg" class="rounded-lg three" width="100px" height="100px" alt=""></div>
+                            <div class="cursor-pointer"><img src="./images/image-product-4-thumbnail.jpg" class="rounded-lg four" width="100px" height="100px" alt=""></div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+
+    <script>
+
+    function remove(e){
+        $(e).parent().siblings(':not(hr, h2)').remove();
+        $(e).parent().remove();
+        $('#iconCard').addClass('hidden')
+        $(`<div id='empty' class="h-20 flex justify-center items-center">
+                <h3>Your card is empty</h3>
+                </div>`).insertAfter('#hrCard')  
+    }
+    remove()
+
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.js"></script>
+
+    <script src="./src/main.js" ></script>
+</body>
+</html>
